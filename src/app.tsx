@@ -1,9 +1,6 @@
 import { createRoot } from "react-dom/client";
 import Page from "./page";
 import {
-  useQuery,
-  useMutation,
-  useQueryClient,
   QueryClient,
   QueryClientProvider,
 } from "@tanstack/react-query";

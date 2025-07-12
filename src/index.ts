@@ -13,8 +13,7 @@ if (require('electron-squirrel-startup')) {
 const createWindow = (): void => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    height: 600,
-    width: 800,
+    fullscreen: true,
     webPreferences: {
       preload: MAIN_WINDOW_PRELOAD_WEBPACK_ENTRY,
     },
@@ -24,7 +23,7 @@ const createWindow = (): void => {
   mainWindow.loadURL(MAIN_WINDOW_WEBPACK_ENTRY);
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 
   // Modify CSP header for all requests to the renderer process
   mainWindow.webContents.session.webRequest.onHeadersReceived(
@@ -32,7 +31,7 @@ const createWindow = (): void => {
     (details, callback) => {
       let csp = `
         default-src 'self' 'unsafe-inline' data:;
-        script-src 'self' 'unsafe-inline';
+        script-src 'self' 'unsafe-inline' 'unsafe-eval';
         style-src 'self' 'unsafe-inline';
         img-src 'self' data:;
         media-src 'self';
@@ -45,7 +44,7 @@ const createWindow = (): void => {
       const allowedApiHosts = [
         'http://localhost:3000',
         'ws://localhost:3000',
-        'https://jsonplaceholder.typicode.com/'
+        'https://api.weather.gov',
       ];
       csp += ` connect-src 'self' ${allowedApiHosts.join(' ')};`;
 
