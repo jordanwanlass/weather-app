@@ -12,6 +12,7 @@ import {
   CircleHelp,
   CloudMoon,
   Moon,
+  CloudLightning,
 } from "lucide-react";
 
 interface WeatherDisplayData {
@@ -35,6 +36,10 @@ const weatherDisplayMap: Record<string, WeatherDisplayData> = {
   "partly cloudy": {
     icon: <CloudSun className="h-5 w-5 drop-shadow-md" />,
     backgroundClass: "bg-weather-partly-cloudy",
+  },
+  "mostly cloudy": {
+    icon: <Cloud className="h-5 w-5 drop-shadow-md" />,
+    backgroundClass: "bg-weather-cloudy",
   },
   cloudy: {
     icon: <Cloud className="h-5 w-5 drop-shadow-md" />,
@@ -96,6 +101,15 @@ const weatherDisplayMap: Record<string, WeatherDisplayData> = {
     icon: <Moon className="h-5 w-5 drop-shadow-md" />,
     backgroundClass: "bg-weather-clear-night",
   },
+  "slight chance showers and thunderstorms": {
+    icon: <CloudLightning className="h-5 w-5 drop-shadow-md"/>,
+    backgroundClass: "bg-weather-thunderstorms"
+  }
+  ,
+  "slight chance rain showers": {
+    icon: <CloudRain className="h-5 w-5 drop-shadow-md"/>,
+    backgroundClass: "bg-weather-thunderstorms"
+  }
 };
 
 const defaultDisplayData: WeatherDisplayData = {
