@@ -22,6 +22,7 @@ interface ForecastPeriod {
   detailedForecast?: string;
   highTemp?: number;
   lowTemp?: number;
+  formattedTime?: string;
 }
 
 interface ForecastProperties {

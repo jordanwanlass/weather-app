@@ -38,7 +38,7 @@ export const useWeatherForecast = () => {
       const hourlyPeriods = hourlyData.properties.periods;
 
       const dailyGrouped = groupDailyPeriodsByDay(dailyPeriods);
-      console.log(dailyGrouped);
+
       return combineForecastsByDayAndHour(hourlyPeriods, dailyGrouped);
     },
     retry: 2,
@@ -120,7 +120,6 @@ const combineForecastsByDayAndHour = (
         ...period,
         formattedTime: format(date, "h:mm a"),
       };
-      // acc[dayKey].hourlyData[hourKey].push(periodWithFormattedTime);
       acc[dayKey].hourlyData[hourKey] = periodWithFormattedTime;
 
       return acc;
