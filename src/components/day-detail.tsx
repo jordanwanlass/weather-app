@@ -102,7 +102,6 @@ export default function DayDetail() {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
           {Object.entries(hourlyData).map(([hourKey, hour]) => {
             const icon = getWeatherIcon(hour.shortForecast);
-            console.log(hour.shortForecast, hour.startTime)
             return (
               <div
                 key={hourKey}
