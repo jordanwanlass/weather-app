@@ -109,6 +109,10 @@ const weatherDisplayMap: Record<string, WeatherDisplayData> = {
   "slight chance rain showers": {
     icon: <CloudRain className="h-5 w-5 drop-shadow-md"/>,
     backgroundClass: "bg-weather-thunderstorms"
+  },
+  "mostly clear then patchy smoke": {
+    icon: <CloudMoon className="h-5 w-5 drop-shadow-md" />,
+    backgroundClass: "bg-weather-patchy-smoke"
   }
 };
 

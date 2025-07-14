@@ -213,3 +213,11 @@ html, body {
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
+
+.bg-weather-patchy-smoke {
+  background: linear-gradient(to bottom, #1A2E4C, #0F1D33);
+  position: relative;
+  overflow: hidden; /* Needed for the smoke overlay pseudo-element */
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
